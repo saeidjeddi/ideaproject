@@ -1,0 +1,95 @@
+
+
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-top: 30px;
+  backdrop-filter: blur(8px);
+}
+
+.section-title {
+  border-bottom: 2px solid #151616;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #000000;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-info i {
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.contact-info a:hover {
+  color: #090a0c;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.section-item {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease;
+}
+
+.section-item:hover {
+  transform: scale(1.05);
+}
+
+.blockquote {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  border-left: 5px solid #000000;
+  font-style: italic;
+  border-radius: 8px;
+  margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .section-item {
+    padding: 15px;
+  }
+}
+
