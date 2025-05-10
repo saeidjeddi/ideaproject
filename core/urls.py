@@ -6,7 +6,9 @@ from home.views.templat import robots_txt
 
 urlpatterns = [
     path('panel-admin/', admin.site.urls),
+
     path('', include('home.urls', namespace='home')),
+
 
 ]
 

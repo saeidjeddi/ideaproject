@@ -4,7 +4,7 @@ from .base import *
 
 SECRET_KEY = 'django-insecure-2oluxsxklsc_0(%b*w9#rwmm51a52w$+55fvf1#4u1kglt!)1-'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["https://saeidjeddi.ir", "http://saeidjeddi.ir", "saeeidjeddi.ir", "www.saeidjeddi.ir", "*"]
 
@@ -50,7 +50,18 @@ REST_FRAMEWORK = {
 }
 
 
+# WSGI_APPLICATION = 'core.wsgi.application'
 
+ASGI_APPLICATION = "core.asgi.application"
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 AUTH_USER_MODEL = "accounts.User"
 
