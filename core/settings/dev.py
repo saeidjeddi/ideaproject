@@ -19,12 +19,12 @@ INSTALLED_APPS +=[
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'idea',
-        'USER': 'postgres',
+        'USER': 'root',
         'PASSWORD': 'S@eed#9776',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': '141.98.210.124',
+        'PORT': '3306',
     }
 }
 
