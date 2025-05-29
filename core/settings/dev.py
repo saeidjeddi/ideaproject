@@ -12,6 +12,11 @@ CSRF_TRUSTED_ORIGINS = ["https://saeidjeddi.ir",]
 
 
 INSTALLED_APPS +=[
+    'rest_framework',
+    'rest_framework_simplejwt',
+
+
+
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
 ]
