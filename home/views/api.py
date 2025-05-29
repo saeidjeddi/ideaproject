@@ -6,4 +6,4 @@ from rest_framework.views import APIView
 
 class HomeView(APIView):
     def get(self, request):
-        return Response({'hello': 'world111115555555555555555555555555555555511111111'})
+        return Response({'hejjjjjjjllo': 'world111115555555555555555555555555555555511111111'})
