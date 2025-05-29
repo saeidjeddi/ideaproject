@@ -56,6 +56,7 @@ REST_FRAMEWORK = {
 
 
 
+
 WSGI_APPLICATION  = "core.wsgi.application"
 
 CHANNEL_LAYERS = {
