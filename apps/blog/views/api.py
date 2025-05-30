@@ -10,6 +10,7 @@ class ListPostAPIView(APIView):
     def get(self, request):
         queryset = ListPostModel.objects.only(
             'id',
+            'image',
             'title',
             'content',
             'author',
