@@ -39,12 +39,12 @@ DATABASES = {
 
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = '/var/www/ideaproject/static'
+STATIC_ROOT = '/var/www/ideaproject/static'
 # STATIC_ROOT = BASE_DIR.parent / 'static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR.parent / 'static/',
-]
+#
+# STATICFILES_DIRS = [
+#     BASE_DIR.parent / 'static/',
+# ]
 
 
 
