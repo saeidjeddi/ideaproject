@@ -2,10 +2,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from home.views.templat import robots_txt
 
+from apps import blog
+from home.views.templat import robots_txt
+# from oauth2_provider import urls as oauth2_urls
 urlpatterns = [
     path('panel-admin/', admin.site.urls),
+    path('blog/', include('apps.blog.urls')),
+    # path('o/', include(oauth2_urls)),
 
     path('', include('home.urls', namespace='home')),
 
