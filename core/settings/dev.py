@@ -4,7 +4,7 @@ from .base import *
 
 SECRET_KEY = 'django-insecure-2oluxsxklsc_0(%b*w9#rwmm51a52w$+55fvf1#4u1kglt!)1-'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["https://saeidjeddi.ir", "http://saeidjeddi.ir", "saeeidjeddi.ir", "www.saeidjeddi.ir", "*"]
 
@@ -42,9 +42,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/ideaproject/static'
 # STATIC_ROOT = BASE_DIR.parent / 'static/'
 #
-# STATICFILES_DIRS = [
-#     BASE_DIR.parent / 'static/',
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR.parent / 'static/',
+]
 
 
 
