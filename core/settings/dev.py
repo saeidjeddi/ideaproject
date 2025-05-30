@@ -57,10 +57,11 @@ CKEDITOR_ALLOW_NONIMAGE_FILES = False
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
-        'height': 300,
-        'width': '100%',
+        'height': 400,
+        'width': 1000,
     },
 }
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.parent / 'media/'
