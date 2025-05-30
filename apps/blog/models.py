@@ -1,10 +1,6 @@
 from django.db import models
 from apps.accounts.models import User
-
-
-
-
-
+from ckeditor.fields import RichTextField
 
 
 
@@ -16,7 +12,7 @@ def get_default_product_image():
 class ListPostModel(models.Model):
     image = models.ImageField(upload_to='images/%Y/%m/%d', default=get_default_product_image)
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    content = RichTextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

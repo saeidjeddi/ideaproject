@@ -9,8 +9,10 @@ from home.views.templat import robots_txt
 urlpatterns = [
     path('panel-admin/', admin.site.urls),
     path('blog/', include('apps.blog.urls')),
-    path('', include('home.urls', namespace='home')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('robots.txt', robots_txt, name='robots_txt'),
+    path('', include('home.urls', namespace='home')),
+
 ]
 
 if settings.DEBUG:

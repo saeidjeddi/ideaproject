@@ -8,13 +8,16 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["https://saeidjeddi.ir", "http://saeidjeddi.ir", "saeeidjeddi.ir", "www.saeidjeddi.ir", "*"]
 
-CSRF_TRUSTED_ORIGINS = ["https://saeidjeddi.ir",]
+CSRF_TRUSTED_ORIGINS = ["https://saeidjeddi.ir","https://test.saeidjeddi.ir"]
 
 
 INSTALLED_APPS +=[
     'rest_framework',
     'rest_framework_simplejwt',
     # 'oauth2_provider',
+
+    'ckeditor',
+    'ckeditor_uploader',
 
 
 
@@ -48,6 +51,16 @@ STATIC_ROOT = '/var/www/ideaproject/static'
 # ]
 
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+    },
+}
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.parent / 'media/'
@@ -99,7 +112,6 @@ SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 SESSION_COOKIE_AGE = 86400
-
 
 
 
