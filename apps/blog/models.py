@@ -2,7 +2,19 @@ from django.db import models
 from apps.accounts.models import User
 
 
+
+
+
+
+
+
+
+def get_default_product_image():
+    return 'default_image_blog/default_image.png'
+
+
 class ListPostModel(models.Model):
+    image = models.ImageField(upload_to='images/%Y/%m/%d', default=get_default_product_image)
     title = models.CharField(max_length=100)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -13,6 +13,7 @@ class ListPostSerializer(serializers.ModelSerializer):
         model = ListPostModel
         fields = [
         'id',
+        'image',
         'title',
         'content',
         'author',
