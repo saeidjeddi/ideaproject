@@ -2,7 +2,7 @@ from .base import *
 
 
 
-SECRET_KEY = 'django-insecure-2oluxsxklsc_0(%b*w9#rwmm51a52w$+55fvf1#4u1kglt!)1-'
+SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = False
 
@@ -27,10 +27,10 @@ INSTALLED_APPS +=[
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'idea',
-        'USER': 'root',
-        'PASSWORD': 'S@eed#9776',
-        'HOST': '141.98.210.124',
+        'NAME': config('Name_DB'),
+        'USER': config('User_DB'),
+        'PASSWORD': config('Password_DB'),
+        'HOST': config('HOST_DB'),
         'PORT': '3306',
     }
 }
@@ -40,6 +40,7 @@ DATABASES = {
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/ideaproject/static'
+
 # STATIC_ROOT = BASE_DIR.parent / 'static/'
 #
 # STATICFILES_DIRS = [
