@@ -16,8 +16,8 @@ INSTALLED_APPS +=[
     'rest_framework_simplejwt',
     # 'oauth2_provider',
 
-    'ckeditor',
-    'ckeditor_uploader',
+    # 'ckeditor',
+    # 'ckeditor_uploader',
 
 
 
@@ -51,16 +51,16 @@ STATIC_ROOT = '/var/www/ideaproject/static'
 # ]
 
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
+# CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'full',
-        'height': 300,
-        'width': '100%',
-    },
-}
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'full',
+#         'height': 300,
+#         'width': '100%',
+#     },
+# }
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.parent / 'media/'
