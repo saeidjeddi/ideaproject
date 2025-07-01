@@ -12,6 +12,7 @@ class HomeView(View):
 
 
 
+
 def robots_txt(request):
     lines = [
         "User-agent: *",
