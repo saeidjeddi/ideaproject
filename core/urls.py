@@ -15,6 +15,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 urlpatterns = [
     path('panel-admin/', admin.site.urls),
     path('blog/', include('apps.blog.urls')),
+    path('user/', include('apps.accounts.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
     path('robots.txt', robots_txt, name='robots_txt'),
@@ -39,8 +40,8 @@ urlpatterns += [
 
 urlpatterns += [
     # YOUR PATTERNS
-    path('schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:
-    path('swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-    path('redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
