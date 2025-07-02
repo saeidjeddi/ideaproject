@@ -14,13 +14,11 @@ CSRF_TRUSTED_ORIGINS = ["https://saeidjeddi.ir","https://test.saeidjeddi.ir"]
 INSTALLED_APPS +=[
     'rest_framework',
     'rest_framework_simplejwt',
-    # 'oauth2_provider',
-
-    # 'ckeditor',
-    # 'ckeditor_uploader',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
 
 
-
+    
     'home.apps.HomeConfig',
     'apps.accounts.apps.AccountsConfig',
     'apps.blog.apps.BlogConfig',
@@ -126,7 +124,16 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        # 'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Your Project API',
+    'DESCRIPTION': 'Your project description',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
 }
