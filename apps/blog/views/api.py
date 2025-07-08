@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from apps.blog.models import ListPostModel
-from apps.blog.serializers import ListPostSerializer, ListPostDetailSerializer
+from apps.blog.serializers import ListPostSerializer, ListPostDetailSerializer, ListPostCreateSerializer, ListPostUpdateSerializer
 
 
 class ListPostAPIView(APIView):
@@ -34,13 +34,27 @@ class ListPostDetailAPIView(APIView):
 
 
 
-
 class ListPostCreateAPIView(APIView):
-    serializer_class = ListPostSerializer
+    serializer_class = ListPostCreateSerializer
 
     def post(self, request):
-        serializer = self.serializer_class(data=request.data)
+        serializer = self.serializer_class(data=request.data, context={'request': request})
         if serializer.is_valid():
-            serializer.save(author=request.user)
+            serializer.save()
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
+    
+
+class ListPostUpdateAPIView(APIView):
+    serializer_class = ListPostUpdateSerializer
+
+    def put(self, request, pk):
+        try:
+            queryset = ListPostModel.objects.get(pk=pk)
+            serializer = self.serializer_class(queryset, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save(author=request.user)  # Ensure the author is set to the current user
+                return Response(serializer.data)
+            return Response(serializer.errors, status=400)
+        except ListPostModel.DoesNotExist:
+            return Response({"error": "Post not found"}, status=404)

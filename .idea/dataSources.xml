@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Django default" uuid="7435533c-1405-4b80-a8e9-5d23d4eccca9">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="saeedDB@localhost" uuid="688c2e98-611b-4a7c-82ca-9abba5d55437">
+      <driver-ref>mysql_aurora_aws</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/core/settings/dev.py</remarks>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://141.98.210.124:3306/idea</jdbc-url>
+      <jdbc-driver>software.aws.rds.jdbc.mysql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql:aws://localhost:3306/saeedDB</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
