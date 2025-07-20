@@ -58,3 +58,20 @@ class ListPostUpdateAPIView(APIView):
             return Response(serializer.errors, status=400)
         except ListPostModel.DoesNotExist:
             return Response({"error": "Post not found"}, status=404)
+
+
+
+class ListPostDeleteAPIView(APIView):
+    
+    def delete(self, request, pk):
+        try:
+            post = ListPostModel.objects.get(pk=pk)
+            
+            if post.author != request.user:
+                return Response({"error": "شما مجوز حذف این پست را ندارید."}, status=403)
+            
+            post.delete()
+            return Response({"message": "پست با موفقیت حذف شد."}, status=204)
+        
+        except ListPostModel.DoesNotExist:
+            return Response({"error": "پست پیدا نشد."}, status=404)
