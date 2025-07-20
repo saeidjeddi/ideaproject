@@ -77,9 +77,10 @@ class ListPostCreateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         request = self.context.get('request')
-        validated_data['author'] = request.user  
+        if not request.user.is_authenticated:
+            raise serializers.ValidationError("کاربر وارد نشده است.")
+        validated_data['author'] = request.user
         return super().create(validated_data)
-
 
 
 class ListPostUpdateSerializer(serializers.ModelSerializer):
@@ -88,7 +89,7 @@ class ListPostUpdateSerializer(serializers.ModelSerializer):
         fields = "__all__"
         read_only_fields = ['author']
 
-    # def update(self, instance, validated_data):
-    #     request = self.context.get('request')
-    #     validated_data['author'] = request.user  
-    #     return super().update(instance, validated_data)
+    def update(self, instance, validated_data):
+        request = self.context.get('request')
+        validated_data['author'] = request.user  
+        return super().update(instance, validated_data)
